@@ -1,6 +1,9 @@
 node_modules
 .template-sync-worktree
 
+.codex
+test
+
 .DS_Store
 Thumbs.db
 
