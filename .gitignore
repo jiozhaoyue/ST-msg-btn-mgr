@@ -1,5 +1,9 @@
 node_modules
 
+.codex
+
+test
+
 .DS_Store
 Thumbs.db
 
