@@ -1,0 +1,18 @@
+{
+  "type": "script",
+  "enabled": true,
+  "name": "消息按钮管理器v1.0.0",
+  "id": "a90de8ad-ff45-4335-a9f7-5ff0d4c447df",
+  "content": "import 'https://testingcf.jsdelivr.net/gh/jiozhaoyue/ST-msg-btn-mgr@main/dist/ST-msg-btn-mgr/index.js'",
+  "info": "代码仓库：https://github.com/jiozhaoyue/ST-msg-btn-mgr\nDiscord帖子：https://discord.com/channels/1134557553011998840/1513143233960611982",
+  "button": {
+    "enabled": true,
+    "buttons": [
+      {
+        "name": "⚙",
+        "visible": true
+      }
+    ]
+  },
+  "data": {}
+}

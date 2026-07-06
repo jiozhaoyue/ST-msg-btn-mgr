@@ -1,0 +1,11 @@
+{
+  "display_name": "消息按钮管理器",
+  "loading_order": 100,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "author": "jiozhaoyue",
+  "version": "1.0.0",
+  "homePage": "https://github.com/jiozhaoyue/ST-msg-btn-mgr",
+  "auto_update": true
+}
