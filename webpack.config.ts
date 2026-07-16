@@ -19,9 +19,12 @@ import webpack from 'webpack';
 import WebpackObfuscator from 'webpack-obfuscator';
 const require = createRequire(import.meta.url);
 const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default;
+<<<<<<< HEAD
 const package_json = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, 'package.json'), 'utf-8')) as {
   name?: string;
 };
+=======
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
 
 interface Config {
   port: number;
@@ -32,6 +35,7 @@ interface Entry {
   html?: string;
 }
 
+<<<<<<< HEAD
 interface ProjectTarget {
   entry: string;
 }
@@ -57,6 +61,8 @@ function get_project_entry(project_name: string) {
   return project.entry;
 }
 
+=======
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
 function parse_entry(script_file: string) {
   const html = path.join(path.dirname(script_file), 'index.html');
   if (fs.existsSync(html)) {
@@ -79,7 +85,11 @@ function common_path(lhs: string, rhs: string) {
 function glob_script_files() {
   const results: string[] = [];
 
+<<<<<<< HEAD
   fs.globSync(`src/**/index.{ts,tsx,js,jsx}`)
+=======
+  fs.globSync(`{示例,src}/**/index.{ts,tsx,js,jsx}`)
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
     .filter(
       file => process.env.CI !== 'true' || !fs.readFileSync(path.join(import.meta.dirname, file)).includes('@no-ci'),
     )
@@ -107,6 +117,7 @@ const config: Config = {
   entries: glob_script_files().map(parse_entry),
 };
 
+<<<<<<< HEAD
 function selected_entries(env: Record<string, unknown> | undefined) {
   const project_name = typeof env?.project === 'string' ? env.project : process.env.TAVERN_HELPER_PROJECT;
   if (!project_name) {
@@ -119,6 +130,8 @@ function is_truthy(value: unknown) {
   return value === true || value === 'true' || value === '1';
 }
 
+=======
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
 let io: Server;
 function watch_tavern_helper(compiler: webpack.Compiler) {
   if (compiler.options.watch) {
@@ -232,14 +245,22 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
     experiments: {
       outputModule: true,
     },
+<<<<<<< HEAD
     devtool: argv.mode === 'production' ? false : 'eval-source-map',
+=======
+    devtool: argv.mode === 'production' ? 'source-map' : 'eval-source-map',
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
     watchOptions: {
       ignored: ['**/dist', '**/node_modules'],
     },
     entry: path.join(import.meta.dirname, entry.script),
     target: 'browserslist',
     output: {
+<<<<<<< HEAD
       devtoolNamespace: package_json.name ?? 'tavern_helper_template',
+=======
+      devtoolNamespace: 'tavern_helper_template',
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
       devtoolModuleFilenameTemplate: info => {
         const resource_path = decodeURIComponent(info.resourcePath.replace(/^\.\//, ''));
         const is_direct = info.allLoaders === '';
@@ -478,9 +499,14 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
     )
       .concat(
         { apply: watch_tavern_helper },
+<<<<<<< HEAD
         ...(is_truthy(_env?.buildOnly) || is_truthy(process.env.TAVERN_HELPER_BUILD_ONLY)
           ? []
           : [{ apply: schema_dump }, { apply: tavern_sync }]),
+=======
+        { apply: schema_dump },
+        { apply: tavern_sync },
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
         new VueLoaderPlugin(),
         unpluginAutoImport({
           dts: true,
@@ -602,15 +628,33 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
       const cdn = {
         sass: 'https://jspm.dev/sass',
       };
+<<<<<<< HEAD
       return callback(
         null,
         'module-import ' + (cdn[request as keyof typeof cdn] ?? `https://testingcf.jsdelivr.net/npm/${request}/+esm`),
+=======
+      const package_json = JSON.parse(fs.readFileSync(path.join(import.meta.dirname, 'package.json'), 'utf-8')) as {
+        dependencies?: Record<string, string>;
+        devDependencies?: Record<string, string>;
+      };
+      const package_versions = { ...package_json.devDependencies, ...package_json.dependencies };
+      const version = package_versions[request]?.replace(/^[~^]/, '');
+      const versioned_request = /^[.\d]+$/.test(version) ? `${request}@${version}` : request;
+      return callback(
+        null,
+        'module-import ' +
+          (cdn[request as keyof typeof cdn] ?? `https://testingcf.jsdelivr.net/npm/${versioned_request}/+esm`),
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
       );
     },
   });
 }
 
+<<<<<<< HEAD
 export default (env: Record<string, unknown> | undefined, argv: any) =>
   selected_entries(env).map(entry => parse_configuration(entry)(env, argv));
 
 
+=======
+export default config.entries.map(parse_configuration);
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be

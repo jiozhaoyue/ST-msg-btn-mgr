@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build:dev": "webpack --mode development",
+<<<<<<< HEAD
     "build:js": "webpack --mode production --env buildOnly=true",
     "build": "pnpm build:js",
     "build:all": "webpack --mode production",
@@ -8,6 +9,15 @@
     "package:script": "node scripts/package-tavern-helper-script.mjs",
     "release:script": "pnpm build:js && pnpm package:script",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss,html,vue}\" --no-error-on-unmatched-pattern"
+=======
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch --progress",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss,html,vue}\" --no-error-on-unmatched-pattern",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "dump": "node dump_schema.ts",
+    "sync": "node tavern_sync.mjs"
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
   },
   "browserslist": [
     "defaults and partially supports es6-module"
@@ -106,6 +116,20 @@
     "yaml": "^2.9.0",
     "zod": "^4.4.3"
   },
+<<<<<<< HEAD
   "name": "st-msg-btn-mgr",
   "version": "1.0.0"
+=======
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@tailwindcss/oxide",
+      "electron",
+      "esbuild",
+      "javascript-obfuscator",
+      "unrs-resolver",
+      "vue-demi"
+    ]
+  }
+>>>>>>> b6c722413d8cfdaf014bbb3f87518fd8c19754be
 }
