@@ -1,5 +1,8 @@
 node_modules
+<<<<<<< HEAD
 .template-sync-worktree
+=======
+>>>>>>> 6a834e584103185c14d68e73a012be1010d971d4
 
 .DS_Store
 Thumbs.db
