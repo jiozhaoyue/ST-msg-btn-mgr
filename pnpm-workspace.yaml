@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - '@tailwindcss/oxide'
@@ -12,5 +13,9 @@ allowBuilds:
   electron: true
   esbuild: true
   javascript-obfuscator: true
+=======
+allowBuilds:
+  '@parcel/watcher': true
+>>>>>>> 4a9344276d925a83e32726c58b9b05debdf4a8ad
   unrs-resolver: true
   vue-demi: true
