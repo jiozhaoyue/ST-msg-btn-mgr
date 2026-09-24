@@ -1,13 +1,13 @@
 # 酒馆助手前端界面或脚本编写
 
-@.cursor/rules/项目基本概念.mdc
-@.cursor/rules/mcp.mdc
-@.cursor/rules/酒馆变量.mdc
-@.cursor/rules/酒馆助手接口.mdc
-@.cursor/rules/前端界面.mdc
-@.cursor/rules/脚本.mdc
-@.cursor/rules/mvu变量框架.mdc
-@.cursor/rules/mvu角色卡.mdc
+@.agent/rules/项目基本概念.mdc
+@.agent/rules/mcp.mdc
+@.agent/rules/酒馆变量.mdc
+@.agent/rules/酒馆助手接口.mdc
+@.agent/rules/前端界面.mdc
+@.agent/rules/脚本.mdc
+@.agent/rules/mvu变量框架.mdc
+@.agent/rules/mvu角色卡.mdc
 
 <!-- TAVERN-RULES:START v1.1.0 -->
 <!-- 本块由 tavern-harness/scripts/sync_tavern_rules.py 自动生成，请勿手动编辑 -->
