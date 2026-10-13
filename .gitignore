@@ -1,8 +1,11 @@
 node_modules
+<<<<<<< HEAD
 .template-sync-worktree
 
 .codex
 test
+=======
+>>>>>>> bca3799e3ab288f5d52b3e2777478f654fc5e816
 
 .DS_Store
 Thumbs.db
